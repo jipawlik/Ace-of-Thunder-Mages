@@ -1,3 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background: black;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.game-wrapper {
+    /* position: relative; */
+    width: 500px;
+    height: 400px;
+    margin: 0 auto;
+    /* border: 1px solid gray; */
+    /* add media queries and scale differently */
+    transform: scale(2) translateY(30%) translateX(10%);
+}
+
+.game-wrapper canvas {
+    image-rendering: pixelated;
 }
