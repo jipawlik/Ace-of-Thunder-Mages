@@ -3,27 +3,31 @@ class MainRoom {
         this.element = config.element
         this.canvas = this.element.querySelector(".game-canvas")
         this.ctx = this.canvas.getContext("2d")
+        this.map = null
+    }
+
+    startGameLoop() {
+        const step = () => {
+
+            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
+            this.map.drawLowerImg(this.ctx)
+
+            Object.values(this.map.gameObjects).forEach(object => {
+                object.update()
+                object.sprite.draw(this.ctx)
+            })
+
+            requestAnimationFrame(() => {
+                step()
+            })
+        }
+        step()
     }
 
     init() {
-       const image = new Image()
+        this.map = new Map(window.Maps.MainRoom)
+        this.startGameLoop()
 
-       image.onload = () => {
-        this.ctx.drawImage(image, 0, 0)
-       }
-       image.src = "/images/maps/MainRoom.png"
-
-       const hero = new GameObject({
-        x: 7,
-        y: 10,
-        // src is given by default
-       })
-
-       // game loop - objects will be constantly fired/redrawn
-       setTimeout(() => {
-           hero.sprite.draw(this.ctx)
-       }, 200)
-       
     }
 }
 
