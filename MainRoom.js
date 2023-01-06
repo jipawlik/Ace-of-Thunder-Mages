@@ -14,7 +14,7 @@ class MainRoom {
        image.src = "/images/maps/MainRoom.png"
 
        const hero = new GameObject({
-        x: 7,
+        x: 3,
         y: 18,
         // src is given by default
        })
