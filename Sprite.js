@@ -39,9 +39,9 @@ class Sprite {
         // if sprite sheets have same size every time replace values with fixed varibles
         this.isLoaded && ctx.drawImage(this.image,
             0,0,// cut a sprite sheet left,top
-            32,32,// size of cut in px
+            40,70,// size of cut in px
             x,y,// position of sprite on canvas
-            32,32 // size in which it should be drawn
+            40,70 // size in which it should be drawn
             )
     }
 }
