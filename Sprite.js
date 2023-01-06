@@ -14,14 +14,14 @@ class Sprite {
         }
 
         // shadow
-        // this.shadow = new Image()
-        // this.useShadow = true // config.useShadow || false
-        // if (this.useShadow) {
-        //     this.shadow.src =  "/images/chars/shadow.png"
-        // }
-        // this.shadow.onload = () => {
-        //     this.isShadowLoaded = true
-        // }
+        this.shadow = new Image()
+        this.useShadow = true // config.useShadow || false
+        if (this.useShadow) {
+            this.shadow.src =  "/images/chars/shadow.png"
+        }
+        this.shadow.onload = () => {
+            this.isShadowLoaded = true
+        }
 
         // animation and initial state
         this.currentAnimation = config.currentAnimation || "idleDown"
@@ -34,9 +34,8 @@ class Sprite {
     draw(ctx) {
         const x = this.gameObject.x * 16
         const y = this.gameObject.y * 16
-        console.log('x:', this.gameObject.x)
 
-        // this.isShadowLoaded && ctx.drawImage(this.shadow, x,y)
+        this.isShadowLoaded && ctx.drawImage(this.shadow, x, y - 2)
         // if sprite sheets have same size every time replace values with fixed varibles
         this.isLoaded && ctx.drawImage(this.image,
             0,0,// cut a sprite sheet left,top
