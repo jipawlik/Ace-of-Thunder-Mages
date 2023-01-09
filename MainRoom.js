@@ -15,8 +15,10 @@ class MainRoom {
             this.map.drawLowerImg(this.ctx)
             // draw character
             Object.values(this.map.gameObject).forEach(object => {
+                
                 object.update({
-                    arrow: this.directionInput.direction
+                    arrow: this.directionInput.direction,
+                    map: this.map,
                 })
                 object.sprite.draw(this.ctx)
             })
@@ -26,15 +28,14 @@ class MainRoom {
             })
         }
         step()
+
     }
 
     init() {
-        this.map = new MainRoomMap(maps.MainRoom)
-        console.log(this.map)
+        this.map = new MainRoomMap(window.maps.MainRoom)
         this.directionInput = new DirectionInput()
         this.directionInput.init()
         this.startGameLoop()
-
     }
 }
 
