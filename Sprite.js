@@ -24,16 +24,16 @@ class Sprite {
             "idle-up": [ [0,1] ],
             "idle-left": [ [0,3] ],
             "walk-down": [ [1,0], [0,0], [3,0], [0,0]],
-            "walk-right": [ [1,1], [0,1], [3,1], [0,1]],
-            "walk-up": [ [1,2], [0,2], [3,2], [0,2]],
+            "walk-right": [ [1,2], [0,2], [3,2], [0,2]],
+            "walk-up": [ [1,1], [0,1], [3,1], [0,1]],
             "walk-left": [ [1,3], [0,3], [3,3], [0,3]],
         }
 
         // animation and initial state
-        this.currentAnimation = "walk-left"
+        this.currentAnimation = "idle-down"
         this.currentAnimationFrame = 0
 
-        this.animationFrameLimit = config.animationFrameLimit || 16 // how fast sprites are changing
+        this.animationFrameLimit = config.animationFrameLimit || 10 // how fast sprites are changing
         this.animationFrameProgress = this.animationFrameLimit
 
         // reference the game object
