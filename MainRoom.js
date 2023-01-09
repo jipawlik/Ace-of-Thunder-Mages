@@ -8,10 +8,12 @@ class MainRoom {
 
     startGameLoop() {
         const step = () => {
-
+            // clear the canvas to reload from fresh start every time
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
-            
+            // TODO: camera movement, maybe x-axis only, but for now not necessary
+            // draw map layer
             this.map.drawLowerImg(this.ctx)
+            // draw character
             Object.values(this.map.gameObject).forEach(object => {
                 object.update({
                     arrow: this.directionInput.direction
@@ -27,7 +29,8 @@ class MainRoom {
     }
 
     init() {
-        this.map = new Map(window.Maps.MainRoom)
+        this.map = new MainRoomMap(maps.MainRoom)
+        console.log(this.map)
         this.directionInput = new DirectionInput()
         this.directionInput.init()
         this.startGameLoop()

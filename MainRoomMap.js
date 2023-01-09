@@ -1,4 +1,4 @@
-class Map {
+class MainRoomMap {
     constructor(config) {
         this.gameObject = config.gameObject
         this.lowerImg = new Image()
@@ -16,7 +16,7 @@ class Map {
 
 }
 
-window.Maps = {
+maps = {
     MainRoom: {
         lowerSrc: "/images/maps/MainRoom.png",
         upperSrc: "",
