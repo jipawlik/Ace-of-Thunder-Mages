@@ -16,7 +16,6 @@ class Person extends GameObject {
             this.updatePosition()
         } else {
             if(state.arrow){
-                // *tutaj prawidlowo jest przekazywany kierunek
                 this.startBehavior(state, {
                     type: "walk",
                     direction: state.arrow
@@ -33,12 +32,11 @@ class Person extends GameObject {
             if(state.map.isSpaceTaken(this.x, this.y, this.direction)) {
                 return;
             }
-            this.movingProgressRemaining = 16
+            this.movingProgressRemaining = 5
         }
     }
 
     updatePosition() {
-        console.log(this.direction)
             const [property, change] = this.directionUpdate[this.direction]
             this[property] += change
             this.movingProgressRemaining -= 1

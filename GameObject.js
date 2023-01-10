@@ -5,7 +5,9 @@ class GameObject {
         this.direction = config.direction || "down"
         this.sprite = new Sprite({
             gameObject: this,
-            src: config.src || "/images/chars/bert.png",
+            src: config.src,
+            useShadow: config.useShadow,
+            spriteConfig: config.spriteConfig
         })
     }
     update() {

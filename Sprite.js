@@ -10,12 +10,18 @@ class Sprite {
 
         // shadow
         this.shadow = new Image()
-        this.useShadow = true // config.useShadow || false
+        this.useShadow = config.useShadow || false
         if (this.useShadow) {
             this.shadow.src =  "/images/chars/shadow.png"
         }
         this.shadow.onload = () => {
             this.isShadowLoaded = true
+        }
+
+        this.spriteConfig = config.spriteConfig || {
+            // pixel size of sprite sheet to cut
+            width: 40,
+            height: 70
         }
 
         this.animations = config.animations || {
@@ -68,15 +74,17 @@ class Sprite {
     draw(ctx) {
         const x = this.gameObject.x
         const y = this.gameObject.y
+        const width = this.spriteConfig.width
+        const height = this.spriteConfig.height
 
         this.isShadowLoaded && ctx.drawImage(this.shadow, x, y - 3)
         
         const [frameX, frameY] = this.frame
         this.isLoaded && ctx.drawImage(this.image,
-            frameX * 40, frameY * 70,// cut a sprite sheet left,top
-            40,70,// size of cut in px
+            frameX * width, frameY * height,// cut a sprite sheet left,top
+            width,height,// size of cut in px
             x,y,// position of sprite on canvas
-            40,70 // size in which it should be drawn
+            width,height // size in which it should be drawn
             )
         this.updateAnimationProgress()
     }
