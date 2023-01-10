@@ -26,13 +26,12 @@ class Person extends GameObject {
     }
 
     startBehavior(state, behavior){
-        this.direction = behavior.direction 
+        this.direction = behavior.direction
         if (behavior.type === "walk") {
-            // stop here if space not free
             if(state.map.isSpaceTaken(this.x, this.y, this.direction)) {
                 return;
             }
-            this.movingProgressRemaining = 5
+            this.movingProgressRemaining = 16
         }
     }
 
@@ -46,8 +45,7 @@ class Person extends GameObject {
         if(this.movingProgressRemaining > 0){
             this.sprite.setAnimation("walk-"+ this.direction)
             return
-        } else {
-            this.sprite.setAnimation("idle-"+ this.direction)
-        }
+        } 
+        this.sprite.setAnimation("idle-"+ this.direction)
     }
 }

@@ -16,7 +16,7 @@ class MainRoomMap {
     }
     isSpaceTaken(currentX, currentY, direction) {
         const {x, y} = utils.nextPosition(currentX, currentY, direction)
-        return this.walls[`${x}, ${y}`] || false
+        return this.walls[`${x}, ${y}`]
     }
 
 }
@@ -97,10 +97,11 @@ window.maps = {
             }),
         },
         walls: {
-            [utils.asGridCoord(7,11)]: true,
-            [utils.asGridCoord(8,11)]: true,
-            [utils.asGridCoord(7,10)]: true,
-            [utils.asGridCoord(8,10)]: true,
+            [utils.asGridCoord(5.25,18)]: true,
+            [utils.asGridCoord(5.25,19)]: true,
+            [utils.asGridCoord(5.25,20)]: true,
+            [utils.asGridCoord(5.25,21)]: true,
+
         }
     }
 
