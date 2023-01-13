@@ -29,7 +29,6 @@ class Person extends GameObject {
         this.direction = behavior.direction
         if (behavior.type === "walk") {
             if(state.map.isSpaceTaken(this.x, this.y, this.direction)) {
-                console.log("shall stop", state.map.isSpaceTaken(this.x, this.y, this.direction))
                 return;
             } else {
                 this.movingProgressRemaining = 16

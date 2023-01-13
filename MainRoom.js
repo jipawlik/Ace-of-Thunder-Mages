@@ -8,12 +8,8 @@ class MainRoom {
 
     startGameLoop() {
         const step = () => {
-            // clear the canvas to reload from fresh start every time
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
-            // draw map layer
-            //map layer is is wrong on x axis
             this.map.drawLowerImg(this.ctx)
-            // draw character
             Object.values(this.map.gameObject).forEach(object => {
                 
                 object.update({
@@ -33,6 +29,8 @@ class MainRoom {
 
     init() {
         this.map = new MainRoomMap(window.maps.MainRoom)
+        utils.assignWalls(this.map.walls)
+        console.log("yo",this.map.walls)
         this.directionInput = new DirectionInput()
         this.directionInput.init()
         this.startGameLoop()

@@ -11,12 +11,12 @@ body {
 
 .game-wrapper {
     /* position: relative; */
-    width: 500px;
-    height: 400px;
+    width: 369px;
+    height: 334px;
     margin: 0 auto;
-    /* border: 1px solid gray; */
+    outline: 1px solid gray;
     /* add media queries and scale differently */
-    transform: scale(2) translateY(30%) translateX(10%);
+    transform: scale(2) translateY(30%);
 }
 
 .game-wrapper canvas {
