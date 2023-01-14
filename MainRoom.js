@@ -30,7 +30,7 @@ class MainRoom {
     init() {
         this.map = new MainRoomMap(window.maps.MainRoom)
         utils.assignWalls(this.map.walls)
-        console.log("yo",this.map.walls)
+        console.log("yo--",this.map.walls)
         this.directionInput = new DirectionInput()
         this.directionInput.init()
         this.startGameLoop()

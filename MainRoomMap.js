@@ -27,12 +27,21 @@ window.maps = {
         upperSrc: "",
         gameObject: {
             drawer: new GameObject({
-                x: utils.withGrid(15.5),
-                y: utils.withGrid(5),
+                x: utils.withGrid(15.75),
+                y: utils.withGrid(4.5),
                 src: "/images/icons/drawer.png",
                 spriteConfig: {
-                    width: 89,
+                    width: 80,
                     height: 59
+                }
+            }),
+            bin: new GameObject({
+                x: utils.withGrid(20.75),
+                y: utils.withGrid(5.5),
+                src: "/images/icons/bin.png",
+                spriteConfig: {
+                    width: 30,
+                    height: 50
                 }
             }),
             portrait: new GameObject({
@@ -63,13 +72,13 @@ window.maps = {
                 }
             }),
             hero: new Person({
-                x: utils.withGrid(6),
-                y: utils.withGrid(13),
+                x: utils.withGrid(10),
+                y: utils.withGrid(5),
                 src: "/images/chars/bert.png",
                 useShadow: true
             }),
             piano: new GameObject({
-                x: utils.withGrid(0.5),
+                x: utils.withGrid(0.25),
                 y: utils.withGrid(10.5),
                 src: "/images/icons/piano.png",
                 spriteConfig: {
@@ -78,7 +87,7 @@ window.maps = {
                 }
             }),
             sofa: new GameObject({
-                x: utils.withGrid(11.25),
+                x: utils.withGrid(11.5),
                 y: utils.withGrid(10.25),
                 src: "/images/icons/sofa.png",
                 spriteConfig: {
@@ -97,7 +106,7 @@ window.maps = {
             }),
         },
         walls: {
-            ["111,111"]: true,
+            ["176,176"]: true
         }
     }
 
