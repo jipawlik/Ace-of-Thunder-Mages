@@ -10,7 +10,10 @@ class MainRoom {
         const step = () => {
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
             this.map.drawLowerImg(this.ctx)
-            Object.values(this.map.gameObject).forEach(object => {
+
+            Object.values(this.map.gameObject).sort((a,b) => {
+                return a.y - b.y
+            }).forEach(object => {
                 
                 object.update({
                     arrow: this.directionInput.direction,
@@ -30,10 +33,19 @@ class MainRoom {
     init() {
         this.map = new MainRoomMap(window.maps.MainRoom)
         utils.assignWalls(this.map.walls)
-        console.log("yo--",this.map.walls)
+        this.map.mountObjects();
         this.directionInput = new DirectionInput()
         this.directionInput.init()
         this.startGameLoop()
+        // play around with the cutscenes
+        // this.map.startCutscene([
+        //     { who:"hero", type: "walk", direction: "down" }
+        //     { who:"hero", type: "walk", direction: "down" }
+        //     { who:"hero", type: "walk", direction: "down" }
+        //     { who:"hero", type: "walk", direction: "down" }
+        //     { who:"hero", type: "walk", direction: "down" }
+        //     { who:"hero", type: "walk", direction: "down" }
+        // ])
     }
 }
 

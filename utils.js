@@ -26,6 +26,12 @@ const utils = {
         }
         return {x, y}
     },
+    emitEvent: function(name, detail) {
+        const event = new CustomEvent(name, {
+            detail
+        })
+        document.dispatchEvent(event)
+    },
     wallCoords: [
         // entrance bottom
         [5,18],[6,18],[7,18],
