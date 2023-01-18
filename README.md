@@ -24,6 +24,8 @@ The art and sprites in the game are created entirely by myself.
 
 State of the project:
 18 Jan 2023
+It's Wednesday my dears.
+
 there is a room and the character is walking limited by walls.
 Next state: adding dialogues to interact with objects. 
 
