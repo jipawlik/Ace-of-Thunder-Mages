@@ -38,14 +38,11 @@ class MainRoom {
         this.directionInput.init()
         this.startGameLoop()
         // play around with the cutscenes
-        // this.map.startCutscene([
-        //     { who:"hero", type: "walk", direction: "down" }
-        //     { who:"hero", type: "walk", direction: "down" }
-        //     { who:"hero", type: "walk", direction: "down" }
-        //     { who:"hero", type: "walk", direction: "down" }
-        //     { who:"hero", type: "walk", direction: "down" }
-        //     { who:"hero", type: "walk", direction: "down" }
-        // ])
+        this.map.startCutscene([
+            {
+                type: "textMessage", text: "Hi there"
+            }
+        ])
     }
 }
 

@@ -44,9 +44,17 @@ class MainRoomEvent {
 
     }
 
+    textMessage(resolve) {
+        const message = new TextMessage({
+            text: this.event.text,
+            onComplete: () => resolve()
+        })
+        message.init(document.querySelector(".game-wrapper"))
+    }
+
     init() {
         return new Promise(resolve => {
-            this.event[this.event.type](resolve)
+            this[this.event.type](resolve)
         })
     }
 }

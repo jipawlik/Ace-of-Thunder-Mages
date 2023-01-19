@@ -30,7 +30,7 @@ class MainRoomMap {
 
     async startCutscene(events) {
         this.isCutscenePlaying = true
-        for(let i = 0; i<events.length; i++) {
+        for(let i = 0; i < events.length; i++) {
             const eventHandler = new MainRoomEvent({
                 event: events[i],
                 map: this,
@@ -39,6 +39,7 @@ class MainRoomMap {
         }
 
         this.isCutscenePlaying = false
+        Object.values(this.gameObject).forEach(object => object.doBehaviorEvent(this))
     }
 
 
