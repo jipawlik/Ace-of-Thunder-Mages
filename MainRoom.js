@@ -30,19 +30,28 @@ class MainRoom {
 
     }
 
+    bindActionInput() {
+        new KeyPressListener("Enter", () => {
+            // check if there is element to interact with, not a wall but an object
+            this.map.checkForActionCutscene()
+        })
+
+    }
+
     init() {
         this.map = new MainRoomMap(window.maps.MainRoom)
         utils.assignWalls(this.map.walls)
         this.map.mountObjects();
+        this.bindActionInput()
         this.directionInput = new DirectionInput()
         this.directionInput.init()
         this.startGameLoop()
         // play around with the cutscenes
-        this.map.startCutscene([
-            {
-                type: "textMessage", text: "Hi there"
-            }
-        ])
+        // this.map.startCutscene([
+        //     {
+        //         type: "textMessage", text: "Hi there"
+        //     }
+        // ])
     }
 }
 

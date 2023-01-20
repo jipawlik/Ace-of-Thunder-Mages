@@ -1,0 +1,8 @@
+check out what is better: to add an id into every wall coord
+or to modify the game object class and add coords in there -> then run the 
+assignWalls function and iterate it thorugh every game object that exists.
+also add id into every game object
+
+to achieve: if person walks, the nextCoords match any wallCoord (same as assignwalls function)
+console.log into which object the person has run into and clicked enter.
+the function needs to be reusable

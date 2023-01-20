@@ -42,6 +42,18 @@ class MainRoomMap {
         Object.values(this.gameObject).forEach(object => object.doBehaviorEvent(this))
     }
 
+    checkForActionCutscene() {
+        const hero = this.gameObject["hero"]
+        const nextCoords = utils.nextPosition(hero.x, hero.y, hero.direction)
+        // check if any game object is there to interact
+        const match = Object.values(this.gameObject).find(object => {
+            // that one will have to return something else, not the coords. It will be too finicky 
+            // since those coords are counted differently
+            return `${object.x}, ${object.y}` === `${nextCoords.x}, ${nextCoords.y} `
+        })
+        console.log({ match })
+    }
+
 
     addWall(x,y) {
         this.walls[`${x},${y}`] = true;
