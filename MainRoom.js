@@ -35,17 +35,17 @@ class MainRoom {
         new KeyPressListener("Enter", () => {
             this.map.checkForActionCutscene()
         })
-
     }
 
     init() {
         this.map = new MainRoomMap(window.maps.MainRoom)
-        utils.assignWalls(this.map.gameObject, this.map.walls)
+        utils.assignWalls(this.map.walls)
         this.map.mountObjects()
         this.bindActionInput()
         this.directionInput = new DirectionInput()
         this.directionInput.init()
         this.startGameLoop()
+        // console.log("yoooo-")
         // play around with the cutscenes
         // this.map.startCutscene([
         //     {

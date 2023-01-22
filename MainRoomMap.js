@@ -45,31 +45,18 @@ class MainRoomMap {
     checkForActionCutscene() {
         const hero = this.gameObject["hero"]
         const nextCoords = utils.nextPosition(hero.x, hero.y, hero.direction)
- 
         const match = Object.values(this.gameObject).find(object => {
-            const coords = object.walls.map(el => {
-                el[0] *= 16
-                el[1] *= 16
-            return el
-            })
-            
-            let res = []
-            coords.forEach(el => {
-               if(`${el[0]},${el[1]}` === `${nextCoords.x},${nextCoords.y}`) {
-                    res.push(el[0],el[1])
-               }
-
-            })
-            return `${res[0]},${res[1]}` === `${nextCoords.x},${nextCoords.y}`
+            const coords = object.walls
+            coords.some((el) => {
+                 return `${el[0]}` === `${nextCoords.x},${nextCoords.y}`
+                }
+            )
         })
-
-        // debug to keep
+        // to iteruje 9 razy!
+        // undefined wychodzi w  dwoch przypadkach
+        // albo nie ma obiektu spelniajacych wymagania
+        // albo dane w funkcji nakladaja sie na siebie i wychodza bzdury
         console.log({ match })
-
-        if(!this.isCutscenePlaying && match && match.talking.length) {
-            this.startCutscene(match.talking[0].events)
-        }
-
     }
 
     addWall(x,y) {
@@ -103,7 +90,14 @@ window.maps = {
                     height: 59
                 },
                 walls: [
-                    [14,2],[15,2],[15,3],[15,4],[16,4],[17,4],[18,4],[19,4]
+                    [utils.asGridCoord(14,2)],
+                    [utils.asGridCoord(15,2)],
+                    [utils.asGridCoord(15,3)],
+                    [utils.asGridCoord(15,4)],
+                    [utils.asGridCoord(16,4)],
+                    [utils.asGridCoord(17,4)],
+                    [utils.asGridCoord(18,4)],
+                    [utils.asGridCoord(19,4)]
                 ]
                 
             }),
@@ -116,7 +110,8 @@ window.maps = {
                     height: 50
                 },
                 walls: [
-                    [20,4],[21,4],[22,5],[22,6],[22,7]
+                    [utils.asGridCoord(20,4)],
+                    [utils.asGridCoord(21,4)]
                 ]
             }),
             portrait: new GameObject({
@@ -128,7 +123,10 @@ window.maps = {
                     height: 60
                 },
                 walls: [
-                    [11,3],[12,3],[13,3],[14,3]
+                    [utils.asGridCoord(11,3)],
+                    [utils.asGridCoord(12,3)],
+                    [utils.asGridCoord(13,3)],
+                    [utils.asGridCoord(14,3)]
                 ]
 
             }),
@@ -141,7 +139,14 @@ window.maps = {
                     height: 142
                 },
                 walls: [
-                    [-1,7],[-1,6], [-1,5],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4]
+                    [utils.asGridCoord(-1,5)],
+                    [utils.asGridCoord(0,4)],
+                    [utils.asGridCoord(1,4)],
+                    [utils.asGridCoord(2,4)],
+                    [utils.asGridCoord(3,4)],
+                    [utils.asGridCoord(4,4)],
+                    [utils.asGridCoord(5,4)],
+                    [utils.asGridCoord(6,4)]
                 ]
             }),
             cp: new GameObject({
@@ -153,7 +158,12 @@ window.maps = {
                     height: 76
                 },
                 walls: [
-                    [7,4],[8,4],[9,4],[10,4],[11,4],[11,3]
+                    [utils.asGridCoord(7,4)],
+                    [utils.asGridCoord(8,4)],
+                    [utils.asGridCoord(9,4)],
+                    [utils.asGridCoord(10,4)],
+                    [utils.asGridCoord(11,4)],
+                    [utils.asGridCoord(11,3)]
                 ]
             }),
             hero: new Person({
@@ -171,7 +181,16 @@ window.maps = {
                     height: 100
                 },
                 walls: [
-                    [2,14],[3,14],[3,13],[3,12],[3,11],[3,10],[3,9],[2,8],[-1,7],[1,8],[0,8],
+                    [utils.asGridCoord(2,14)],
+                    [utils.asGridCoord(3,14)],
+                    [utils.asGridCoord(3,13)],
+                    [utils.asGridCoord(3,12)],
+                    [utils.asGridCoord(3,11)],
+                    [utils.asGridCoord(3,10)],
+                    [utils.asGridCoord(3,9)],
+                    [utils.asGridCoord(2,8)],
+                    [utils.asGridCoord(1,8)],
+                    [utils.asGridCoord(0,8)]
                 ]
     
             }),
@@ -184,7 +203,13 @@ window.maps = {
                     height: 99
                 },
                 walls: [
-                    [13,9],[12,9],[11,9],[11,10],[11,11],[11,12],[11,13],[10,14],[9,14]
+                    [utils.asGridCoord(13,9)],
+                    [utils.asGridCoord(12,9)],
+                    [utils.asGridCoord(11,9)],
+                    [utils.asGridCoord(11,10)],
+                    [utils.asGridCoord(11,11)],
+                    [utils.asGridCoord(11,12)],
+                    [utils.asGridCoord(11,13)]
                 ]
             }),
             tv: new GameObject({
@@ -196,7 +221,14 @@ window.maps = {
                     height: 90
                 },
                 walls: [
-                    [22,8],[21,9],[20,9],[19,9],[18,9],[17,9],[16,9],[15,9],[14,9]
+                    [utils.asGridCoord(21,9)],
+                    [utils.asGridCoord(20,9)],
+                    [utils.asGridCoord(19,9)],
+                    [utils.asGridCoord(18,9)],
+                    [utils.asGridCoord(17,9)],
+                    [utils.asGridCoord(16,9)],
+                    [utils.asGridCoord(15,9)],
+                    [utils.asGridCoord(14,9)]
                 ]
             }),
             // use loops for rendering the window animation

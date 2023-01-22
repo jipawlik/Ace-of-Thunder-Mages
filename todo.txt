@@ -2,5 +2,8 @@
 
 - match function works but only once. it has to be reactive.
 - add talking text queues
+- a counter -> how many times an object was approached
+add state management for that
+
 - take gameObject coordinates and check which one exactly belong to an object
  (move walls belongin to only walls into externalWalls array )

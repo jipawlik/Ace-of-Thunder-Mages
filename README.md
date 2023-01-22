@@ -23,9 +23,6 @@ If the project grows, I plan to switch to another game making tool, but for now,
 The art and sprites in the game are created entirely by myself.
 
 State of the project:
-18 Jan 2023
-It's Wednesday my dears.
-
-there is a room and the character is walking limited by walls.
-Next state: adding dialogues to interact with objects. 
+22 Jan 2023
+Trying to indentify a correct game object interaction, a lot of debugging.
 
