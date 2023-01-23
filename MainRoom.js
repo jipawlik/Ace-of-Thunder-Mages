@@ -9,26 +9,19 @@ class MainRoom {
     startGameLoop() {
         const step = () => {
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
-
             this.map.drawLowerImg(this.ctx)
-
-            Object.values(this.map.gameObject).sort((a,b) => {
-                return a.y - b.y
-            }).forEach(object => {
-                
+            Object.values(this.map.gameObject).forEach(object => {
                 object.update({
                     arrow: this.directionInput.direction,
                     map: this.map,
                 })
                 object.sprite.draw(this.ctx)
             })
-            
             requestAnimationFrame(() => {
                 step()
             })
         }
         step()
-
     }
 
     bindActionInput() {
@@ -45,13 +38,6 @@ class MainRoom {
         this.directionInput = new DirectionInput()
         this.directionInput.init()
         this.startGameLoop()
-        // console.log("yoooo-")
-        // play around with the cutscenes
-        // this.map.startCutscene([
-        //     {
-        //         type: "textMessage", text: "Hi there"
-        //     }
-        // ])
     }
 }
 

@@ -31,10 +31,7 @@ const utils = {
         })
         document.dispatchEvent(event)
     },
-    // this will probably be moved or removed,
-    // the code is duplicated in a dumb way
-    // walls were added from both object and array, but the hero was stopping
-    // only at the array elements. need to check why
+
     externalWalls: [
         // entrance bottom
         [5,18],[6,18],[7,18],
@@ -45,7 +42,7 @@ const utils = {
         // piano area
         [2,14],[3,14],[3,13],[3,12],[3,11],[3,10],[3,9],[2,8],[-1,7],[1,8],[0,8],
         // bookshelf area
-        [-1,7],[-1,6], [-1,5],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],
+        [-1,6], [-1,5],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],
         // cp
         [7,4],[8,4],[9,4],[10,4],[11,4],[11,3],
         // portrait 
@@ -58,8 +55,6 @@ const utils = {
         [22,8],[21,9],[20,9],[19,9],[18,9],[17,9],[16,9],[15,9],[14,9],
         // sofa area
         [13,9],[12,9],[11,9],[11,10],[11,11],[11,12],[11,13],[10,14],[9,14],
-
-        [8,14],[8,15],[8,17],[8,16],[8,17]
     ]
    
 }

@@ -25,7 +25,6 @@ class MainRoomMap {
             object.id = key
             object.mount(this)
         })
-
     }
 
     async startCutscene(events) {
@@ -47,20 +46,20 @@ class MainRoomMap {
         const nextCoords = utils.nextPosition(hero.x, hero.y, hero.direction)
         const match = Object.values(this.gameObject).find(object => {
             const coords = object.walls
+            let res = []
             coords.some((el) => {
-                 return `${el[0]}` === `${nextCoords.x},${nextCoords.y}`
+                if(`${el[0]}` === `${nextCoords.x},${nextCoords.y}`){
+                    res.push(el[0])
                 }
-            )
+            })
+            return `${res[0]}`=== `${nextCoords.x},${nextCoords.y}`
+
         })
-        // to iteruje 9 razy!
-        // undefined wychodzi w  dwoch przypadkach
-        // albo nie ma obiektu spelniajacych wymagania
-        // albo dane w funkcji nakladaja sie na siebie i wychodza bzdury
         console.log({ match })
     }
 
-    addWall(x,y) {
-        this.walls[`${x},${y}`] = true;
+    addWall(coords) {
+        this.walls[coords] = true;
     }
 
     removeWall(x,y) {
@@ -72,8 +71,6 @@ class MainRoomMap {
         const {x,y} = utils.nextPosition(wasX, wasY, direction);
         this.addWall(x,y);
     }
-    
-
 }
 
 window.maps = {
@@ -231,16 +228,6 @@ window.maps = {
                     [utils.asGridCoord(14,9)]
                 ]
             }),
-            // use loops for rendering the window animation
-            // npc: new Person({
-            //     x: utils.withGrid(19.25),
-            //     y: utils.withGrid(10.5),
-            //     src: "",
-            //     behaviorLoop:[
-            //         { type: "walk", direction: "left" },
-            //         { type: "stand", direction: "left", time: 800 },
-            //     ],
-            // })
         },
         walls: {}
     }
