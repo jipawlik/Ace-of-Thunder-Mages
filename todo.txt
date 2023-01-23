@@ -1,9 +1,12 @@
 
 
-- 
-- add talking text queues
+NOW:
+- add talking text queues first iteration (piano only)
+- add other talking to objects (only essential)
 - a counter -> how many times an object was approached
 add state management for that (with recognition which object exactly was approached)
+- finish talking queues second iteration (non-essential objects)
+- add non essential talking to objects (nested)
 
 
 
@@ -12,4 +15,12 @@ function is adding walls from gameObjects, but they are not working
 walls from externalWalls are working though
 this means that probably objects are mounted later? 
 but changing the queue isn't working
+
+****working queue****
+- hero is able to interact with every item
+- you can download cv on the computer
+- add multiple talking queues
+- collect items by interacting with items
+- add another room
+- add a hidden room (hidden with password)
 
