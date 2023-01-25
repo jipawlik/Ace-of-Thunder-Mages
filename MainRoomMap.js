@@ -46,16 +46,19 @@ class MainRoomMap {
         const nextCoords = utils.nextPosition(hero.x, hero.y, hero.direction)
         const match = Object.values(this.gameObject).find(object => {
             const coords = object.walls
-            let res = []
+            let result = []
             coords.some((el) => {
                 if(`${el[0]}` === `${nextCoords.x},${nextCoords.y}`){
-                    res.push(el[0])
+                    result.push(el[0])
                 }
             })
-            return `${res[0]}`=== `${nextCoords.x},${nextCoords.y}`
+            return `${result[0]}`=== `${nextCoords.x},${nextCoords.y}`
 
         })
-        console.log({ match })
+        // console.log({ match })
+        if(!this.isCutscenePlaying && match && match.talking.length) {
+            this.startCutscene(match.talking[0].events)
+        }
     }
 
     addWall(coords) {
@@ -86,6 +89,21 @@ window.maps = {
                     width: 80,
                     height: 59
                 },
+                talking: [
+                    {
+                      events: [
+                          { type: "textMessage", text: `${locales.drawer.approach}`},
+                          { type: "textMessage", text: `${locales.drawer.text.download}`},
+                      ]
+                    },
+                    // test -> this will be needed later in the development
+                    {
+                        events: [
+                            { type: "textMessage", text: `${locales.drawer.text.confirm}`},
+                            { type: "textMessage", text: `${locales.drawer.text.decline}`},
+                        ]
+                      }
+                ],
                 walls: [
                     [utils.asGridCoord(14,2)],
                     [utils.asGridCoord(15,2)],
@@ -106,6 +124,16 @@ window.maps = {
                     width: 30,
                     height: 50
                 },
+                talking: [
+                    {
+                      events: [
+                          { type: "textMessage", text: `${locales.bin.approach}`},
+                          { type: "textMessage", text: `${locales.bin.text.see}`},
+                          { type: "textMessage", text: `${locales.bin.text.mine}`},
+                          { type: "textMessage", text: `${locales.bin.text.thought}`},
+                      ]
+                    }
+                ],
                 walls: [
                     [utils.asGridCoord(20,4)],
                     [utils.asGridCoord(21,4)]
@@ -118,7 +146,17 @@ window.maps = {
                 spriteConfig: {
                     width: 49,
                     height: 60
-                },
+                }, 
+                talking: [
+                    {
+                      events: [
+                          { type: "textMessage", text: `${locales.info.approach}`},
+                          { type: "textMessage", text: `${locales.info.text.greet}`},
+                          { type: "textMessage", text: `${locales.info.text.personal}`},
+                          { type: "textMessage", text: `${locales.info.text.room}`},
+                      ]
+                    }
+                ],
                 walls: [
                     [utils.asGridCoord(11,3)],
                     [utils.asGridCoord(12,3)],
@@ -135,6 +173,15 @@ window.maps = {
                     width: 120,
                     height: 142
                 },
+                talking: [
+                    {
+                      events: [
+                          { type: "textMessage", text: `${locales.education.approach}`},
+                          { type: "textMessage", text: `${locales.education.text.university}`},
+                          { type: "textMessage", text: `${locales.education.text.technical}`},
+                      ]
+                    }
+                ],
                 walls: [
                     [utils.asGridCoord(-1,5)],
                     [utils.asGridCoord(0,4)],
@@ -154,6 +201,17 @@ window.maps = {
                     width: 80,
                     height: 76
                 },
+                talking: [
+                    {
+                      events: [
+                          { type: "textMessage", text: `${locales.exp.approach}`},
+                          { type: "textMessage", text: `${locales.exp.text.relevant}`},
+                          { type: "textMessage", text: `${locales.exp.text.pervious}`},
+                          { type: "textMessage", text: `${locales.exp.text.irrelevant}`},
+                      ]
+                    }
+                ],
+                
                 walls: [
                     [utils.asGridCoord(7,4)],
                     [utils.asGridCoord(8,4)],
@@ -177,6 +235,16 @@ window.maps = {
                     width: 74,
                     height: 100
                 },
+                talking: [
+                    {
+                      events: [
+                          { type: "textMessage", text: `${locales.skills.approach}`},
+                          { type: "textMessage", text: `${locales.skills.text.technical}`},
+                          { type: "textMessage", text: `${locales.skills.text.languages}`},
+                          { type: "textMessage", text: `${locales.skills.text.learning}`},
+                      ]
+                    }
+                ],
                 walls: [
                     [utils.asGridCoord(2,14)],
                     [utils.asGridCoord(3,14)],
@@ -196,9 +264,17 @@ window.maps = {
                 y: utils.withGrid(10.25),
                 src: "/images/icons/sofa.png",
                 spriteConfig: {
-                    width: 137,
+                    width: 70,
                     height: 99
                 },
+                talking: [
+                    {
+                      events: [
+                          { type: "textMessage", text: `${locales.sofa.approach}`},
+                          { type: "textMessage", text: `${locales.sofa.text.sit}`},
+                      ]
+                    }
+                ],
                 walls: [
                     [utils.asGridCoord(13,9)],
                     [utils.asGridCoord(12,9)],
@@ -209,6 +285,36 @@ window.maps = {
                     [utils.asGridCoord(11,13)]
                 ]
             }),
+            table: new GameObject({
+                x: utils.withGrid(16),
+                y: utils.withGrid(10.25),
+                src: "/images/icons/table.png",
+                spriteConfig: {
+                    width: 54,
+                    height: 99
+                },
+                talking: [
+                    {
+                      events: [
+                          { type: "textMessage", text: `${locales.cookie.approach}`},
+                          { type: "textMessage", text: `${locales.cookie.text.see}`},
+                          { type: "textMessage", text: `${locales.cookie.text.mine}`},
+                          { type: "textMessage", text: `${locales.cookie.text.question}`},
+                          { type: "textMessage", text: `${locales.cookie.text.share}`},
+                      ]
+                    }
+                ],
+                walls: [
+                    [utils.asGridCoord(13,9)],
+                    [utils.asGridCoord(12,9)],
+                    [utils.asGridCoord(11,9)],
+                    [utils.asGridCoord(17,9)],
+                    [utils.asGridCoord(16,9)],
+                    [utils.asGridCoord(15,9)],
+                    [utils.asGridCoord(14,9)]
+                ]
+
+            }),
             tv: new GameObject({
                 x: utils.withGrid(19.25),
                 y: utils.withGrid(10.5),
@@ -217,15 +323,21 @@ window.maps = {
                     width: 50,
                     height: 90
                 },
+                talking: [
+                    {
+                      events: [
+                          { type: "textMessage", text: `${locales.hobbies.approach}`},
+                          { type: "textMessage", text: `${locales.hobbies.text.watch}`},
+                          { type: "textMessage", text: `${locales.hobbies.text.game}`},
+                          { type: "textMessage", text: `${locales.hobbies.text.dev}`},
+                      ]
+                    }
+                ],
                 walls: [
                     [utils.asGridCoord(21,9)],
                     [utils.asGridCoord(20,9)],
                     [utils.asGridCoord(19,9)],
                     [utils.asGridCoord(18,9)],
-                    [utils.asGridCoord(17,9)],
-                    [utils.asGridCoord(16,9)],
-                    [utils.asGridCoord(15,9)],
-                    [utils.asGridCoord(14,9)]
                 ]
             }),
         },

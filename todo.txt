@@ -1,13 +1,12 @@
-
-
 NOW:
-- add talking text queues first iteration (piano only)
-- add other talking to objects (only essential)
 - a counter -> how many times an object was approached
 add state management for that (with recognition which object exactly was approached)
-- finish talking queues second iteration (non-essential objects)
 - add non essential talking to objects (nested)
+- change font
 
+- add close funtion on esc button, or an ex at the top of the text bar
+- the height should not be fixed -> as much as it needs
+- divide sofa sprite and table sprite - they will have different interactions
 
 
 !! - refactoring of externalWalls in utils. 
@@ -16,6 +15,9 @@ walls from externalWalls are working though
 this means that probably objects are mounted later? 
 but changing the queue isn't working
 
+
+
+
 ****working queue****
 - hero is able to interact with every item
 - you can download cv on the computer
@@ -23,4 +25,8 @@ but changing the queue isn't working
 - collect items by interacting with items
 - add another room
 - add a hidden room (hidden with password)
+- before uploading -> make an instrucion to increase size of the game on screen (ctr + scroll works)
+- skills section -> make a dance (multiple sprites animation)
+- add white sprite to the text bar
+- add desciption about game creator, sprites, art, music etc.
 
