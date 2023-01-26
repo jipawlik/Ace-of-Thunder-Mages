@@ -2,11 +2,9 @@ NOW:
 - a counter -> how many times an object was approached
 add state management for that (with recognition which object exactly was approached)
 - add non essential talking to objects (nested)
-- change font
-
 - add close funtion on esc button, or an ex at the top of the text bar
-- the height should not be fixed -> as much as it needs
-- divide sofa sprite and table sprite - they will have different interactions
+
+
 
 
 !! - refactoring of externalWalls in utils. 
