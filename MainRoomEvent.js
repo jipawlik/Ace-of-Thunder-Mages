@@ -52,6 +52,15 @@ class MainRoomEvent {
         message.init(document.querySelector(".game-wrapper"))
     }
 
+    changeMap(resolve) {
+        const sceneTransition = new SceneTransition()
+        sceneTransition.init(document.querySelector(".game-wrapper"), () => {
+            this.map.overworld.startMap(window.maps[this.event.map])
+            resolve()
+            sceneTransition.fadeOut()
+        })
+    }
+
     init() {
         return new Promise(resolve => {
             this[this.event.type](resolve)

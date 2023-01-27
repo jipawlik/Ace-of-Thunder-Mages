@@ -30,11 +30,25 @@ class MainRoom {
         })
     }
 
-    init() {
-        this.map = new MainRoomMap(window.maps.MainRoom)
+    bindHeroPositionCheck() {
+        document.addEventListener("PersonWalkingComplete", e => {
+            if (e.detail.whoId === "hero") {
+                this.map.checkForFootstepCutscene()
+            }
+        })
+    }
+
+    startMap(mapConfig) {
+        this.map = new MainRoomMap(mapConfig)
+        this.map.overworld = this
         utils.assignWalls(this.map.walls)
         this.map.mountObjects()
+    }
+
+    init() {
+        this.startMap(window.maps.MainRoom)
         this.bindActionInput()
+        this.bindHeroPositionCheck()
         this.directionInput = new DirectionInput()
         this.directionInput.init()
         this.startGameLoop()

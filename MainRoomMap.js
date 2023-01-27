@@ -1,5 +1,6 @@
 class MainRoomMap {
     constructor(config) {
+        this.overworld = null
         this.gameObject = config.gameObject
         this.walls = config.walls || {}
         this.lowerImg = new Image()
@@ -7,6 +8,7 @@ class MainRoomMap {
         this.upperImg = new Image()
         this.upperImg.src = config.upperSrc
         this.isCutscenePlaying = false
+        this.cutsceneSpaces = config.cutsceneSpaces || {}
     }
 
     drawLowerImg(ctx) {
@@ -59,6 +61,14 @@ class MainRoomMap {
         if(!this.isCutscenePlaying && match && match.talking.length) {
             this.startCutscene(match.talking[0].events)
         }
+    }
+
+    checkForFootstepCutscene() {
+        const hero = this.gameObject["hero"]
+        const match = this.cutsceneSpaces[`${hero.x},${hero.y}`]
+        if(!this.isCutscenePlaying && match) {
+            this.startCutscene(match[0].events)
+        } 
     }
 
     addWall(coords) {
@@ -341,7 +351,39 @@ window.maps = {
                 ]
             }),
         },
-        walls: {}
+        walls: {},
+        cutsceneSpaces: {
+            [utils.asGridCoord(6,18)]: [
+                {
+                    events: [
+                        { type: "textMessage", text: `${locales.prompts.leave}`},
+                        // only if no leaving room
+                        { who: "hero", type: "walk",  direction: "up" },
+                        { who: "hero", type: "walk",  direction: "up" },
+                    ]
+                }
+            ],
+            // [utils.asGridCoord(6,19)]: [
+            //     {
+            //         events: [
+            //             { type: "changeMap", map: "Elevator" },
+            //         ]
+            //     }
+            // ]
+
+        }
+    },
+    Elevator: {
+        lowerSrc: "/images/maps/mockup.png",
+        gameObject: {
+            hero: new Person({
+                x: utils.withGrid(6),
+                y: utils.withGrid(14),
+                src: "/images/chars/bert.png",
+                useShadow: true
+            }),
+            // object with instructions
+        }
     }
 
 }

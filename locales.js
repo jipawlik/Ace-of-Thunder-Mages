@@ -1,4 +1,3 @@
-// go through everything, texts tagged with <> should be edited
 const locales = {
     generic: {
         read: "Read",
@@ -10,7 +9,7 @@ const locales = {
         next: "Next"
     },
     skills: {
-        approach: "This is my skills section",
+        approach: "This is my skills section.",
         text: {
             technical: "My technical skills are: HTML, CSS, JS, TS, Vue, React, Cypress, Sass, SCSS, REST API, Ionic, Git + Github.",
             learning: "I'm currently learning computer science and algorithms.",
@@ -49,7 +48,7 @@ const locales = {
     },
     prompts: {
         enter: "<instructions to navigate>",
-        leave: "<bye>"
+        leave: "Would you like to leave the room?"
     },
     hobbies: {
         approach: "This is my hobbies section. Or just an old TV",

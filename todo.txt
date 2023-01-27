@@ -2,8 +2,13 @@ NOW:
 - a counter -> how many times an object was approached
 add state management for that (with recognition which object exactly was approached)
 - add non essential talking to objects (nested)
-- add close funtion on esc button, or an ex at the top of the text bar
+- you can download cv on the computer
 
+- text message box has 2 buttons for nested textMessage! 
+create a text box with more configuration
+
+
+- 1.GO FORWARD WITH TUTORIAL
 
 
 
@@ -18,7 +23,6 @@ but changing the queue isn't working
 
 ****working queue****
 - hero is able to interact with every item
-- you can download cv on the computer
 - add multiple talking queues
 - collect items by interacting with items
 - add another room

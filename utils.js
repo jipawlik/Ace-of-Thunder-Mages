@@ -34,7 +34,7 @@ const utils = {
 
     externalWalls: [
         // entrance bottom
-        [5,18],[6,18],[7,18],
+        [5,18],[7,18],
         // entrance left  
         [4,18],[4,17],[4,16],[4,15], [4,14],
         // entrance right
