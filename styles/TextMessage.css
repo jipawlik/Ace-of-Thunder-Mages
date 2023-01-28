@@ -38,6 +38,27 @@
     position: absolute;
 }
 
+.TextMessage_button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 15px;
+    
+}
+.TextMessage_choice-button {
+    background: none;
+    border: 0;
+    color: var(--menu-font-color);
+    font-family: inherit;
+    cursor: pointer;
+    font-size: 8px;
+    padding: 10px;
+    transition: 300ms;
+}
+.TextMessage_choice-button:hover {
+    color: red;
+}
+
 .TextMessage_next-button {
     right: 10px;
     bottom: 10px;

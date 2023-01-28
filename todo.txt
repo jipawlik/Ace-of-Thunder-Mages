@@ -1,8 +1,10 @@
 NOW:
+FIX GENERATE MESSAGE FUNCTION. IT'S NOT WORKING PROPERLY
 - a counter -> how many times an object was approached
 add state management for that (with recognition which object exactly was approached)
 - add non essential talking to objects (nested)
-- you can download cv on the computer
+- you can download cv drawer
+- add another event type for that
 
 - text message box has 2 buttons for nested textMessage! 
 create a text box with more configuration
@@ -22,6 +24,7 @@ but changing the queue isn't working
 
 
 ****working queue****
+FIRST POLISH UP THE MAIN ROOM, THEN ADD ELEVATOR, THEN SECRET LAB
 - hero is able to interact with every item
 - add multiple talking queues
 - collect items by interacting with items
@@ -32,3 +35,15 @@ but changing the queue isn't working
 - add white sprite to the text bar
 - add desciption about game creator, sprites, art, music etc.
 
+
+- get points by interacting with essential items
+if you get the maximum you are immediately killed by a monster in the basement
+he's a hacker that was waiting to know everything to destroy the system
+as a revenge
+
+- if not interacted with everything the monster fights
+
+Game info
+Navigation with keyboard
+Display size - can be increased by ctr+
+creator

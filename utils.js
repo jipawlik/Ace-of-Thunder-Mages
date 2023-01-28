@@ -2,6 +2,14 @@ const utils = {
     withGrid: function(n) {
         return n * 16
     },
+    messageHelper: false,
+    generateMessage: function(textConfirm, textDecline) {
+        if (!this.messageHelper) {
+            return textConfirm
+        } else {
+            return textDecline
+        }
+    },
     asGridCoord(x,y) {
         return [x*16,y*16]
     },
@@ -31,7 +39,6 @@ const utils = {
         })
         document.dispatchEvent(event)
     },
-
     externalWalls: [
         // entrance bottom
         [5,18],[7,18],

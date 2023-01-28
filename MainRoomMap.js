@@ -103,16 +103,10 @@ window.maps = {
                     {
                       events: [
                           { type: "textMessage", text: `${locales.drawer.approach}`},
-                          { type: "textMessage", text: `${locales.drawer.text.download}`},
+                          { type: "textMessage", text: `${locales.drawer.text.download}`, isChoicePossible: true},
+                          { type: "textMessage", text: `${utils.generateMessage(locales.drawer.text.decline, locales.drawer.text.confirm)}`},
                       ]
                     },
-                    // test -> this will be needed later in the development
-                    {
-                        events: [
-                            { type: "textMessage", text: `${locales.drawer.text.confirm}`},
-                            { type: "textMessage", text: `${locales.drawer.text.decline}`},
-                        ]
-                      }
                 ],
                 walls: [
                     [utils.asGridCoord(14,2)],
@@ -232,8 +226,8 @@ window.maps = {
                 ]
             }),
             hero: new Person({
-                x: utils.withGrid(6),
-                y: utils.withGrid(14),
+                x: utils.withGrid(14),
+                y: utils.withGrid(4),
                 src: "/images/chars/bert.png",
                 useShadow: true
             }),

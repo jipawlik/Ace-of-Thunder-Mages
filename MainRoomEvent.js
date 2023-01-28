@@ -47,6 +47,7 @@ class MainRoomEvent {
     textMessage(resolve) {
         const message = new TextMessage({
             text: this.event.text,
+            isChoicePossible: this.event.isChoicePossible,
             onComplete: () => resolve()
         })
         message.init(document.querySelector(".game-wrapper"))

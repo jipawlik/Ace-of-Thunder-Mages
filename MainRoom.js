@@ -52,6 +52,7 @@ class MainRoom {
         this.directionInput = new DirectionInput()
         this.directionInput.init()
         this.startGameLoop()
+        console.log(utils.messageHelper)
     }
 }
 
