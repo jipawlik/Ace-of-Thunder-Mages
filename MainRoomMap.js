@@ -104,7 +104,6 @@ window.maps = {
                       events: [
                           { type: "textMessage", text: `${locales.drawer.approach}`},
                           { type: "textMessage", text: `${locales.drawer.text.download}`, isChoicePossible: true},
-                          { type: "textMessage", text: `${utils.generateMessage(locales.drawer.text.decline, locales.drawer.text.confirm)}`},
                       ]
                     },
                 ],

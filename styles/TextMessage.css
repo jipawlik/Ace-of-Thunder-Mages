@@ -39,12 +39,16 @@
 }
 
 .TextMessage_button-wrapper {
-    display: flex;
+    display: none;
     justify-content: center;
     align-content: center;
     margin-top: 15px;
     
 }
+.TextMessage_button-wrapper--visible {
+    display: flex;
+}
+
 .TextMessage_choice-button {
     background: none;
     border: 0;

@@ -1,5 +1,7 @@
 NOW:
-FIX GENERATE MESSAGE FUNCTION. IT'S NOT WORKING PROPERLY
+check out event bubbling again
+check out web dev simplified text adventure game tut, since the code now is inefficient
+
 - a counter -> how many times an object was approached
 add state management for that (with recognition which object exactly was approached)
 - add non essential talking to objects (nested)

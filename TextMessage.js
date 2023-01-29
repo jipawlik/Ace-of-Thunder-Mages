@@ -1,5 +1,5 @@
 class TextMessage {
-    constructor({ text, onComplete, isChoicePossible, isSetterOn }) {
+    constructor({ text, onComplete, isChoicePossible }) {
         this.text = text
         this.onComplete = onComplete
         this.element = null
@@ -12,26 +12,23 @@ class TextMessage {
         this.element.innerHTML = (`
             <button class="TextMessage_button TextMessage_close-button" id="close-button">x</button>
             <p class="TextMessage_p"></p>
+            <div class="TextMessage_button-wrapper">
+                    <button class="TextMessage_choice-button" id="choice-button-yes">Yes</button>
+                    <button class="TextMessage_choice-button" id="choice-button-no">No</button>
+            </div>
             <button class="TextMessage_button TextMessage_next-button" id="next-button">Next</button>
         `)
         if(this.isChoicePossible) {
-            this.element.innerHTML = (`
-                <button class="TextMessage_button TextMessage_close-button" id="close-button">x</button>
-                <p class="TextMessage_p"></p>
-                <div class="TextMessage_button-wrapper">
-                    <button class="TextMessage_choice-button" id="choice-button-yes">Yes</button>
-                    <button class="TextMessage_choice-button" id="next-button">No</button>
-                </div>
-            `)
+            // push empty event
+            this.element.querySelector(".TextMessage_button-wrapper").classList.add("TextMessage_button-wrapper--visible")
             this.element.querySelector("#choice-button-yes").addEventListener("click", () => {
-                if(!utils.messageHelper) {
-                    utils.messageHelper = true
-                    this.finish()
-                    // download cv <- dodaj funkcję
-                } else {
-                    utils.messageHelper = false
-                }
-            }) 
+                // replace last event with confirm message
+                this.finish()
+            })
+            this.element.querySelector("#choice-button-no").addEventListener("click", () => {
+                // replace last event with decline message
+                this.finish()
+            })  
         }
 
         this.revealingText = new RevealingText({
