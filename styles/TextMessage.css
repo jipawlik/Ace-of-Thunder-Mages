@@ -39,14 +39,11 @@
 }
 
 .TextMessage_button-wrapper {
-    display: none;
+    display: flex;
     justify-content: center;
     align-content: center;
     margin-top: 15px;
     
-}
-.TextMessage_button-wrapper--visible {
-    display: flex;
 }
 
 .TextMessage_choice-button {

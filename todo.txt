@@ -1,18 +1,19 @@
 NOW:
-check out event bubbling again
-check out web dev simplified text adventure game tut, since the code now is inefficient
+Tech debt:
+textmessage handling is failing - need some state management
+
+create another event using new optional-text constructor.
+if that works you can play around refactoring:
+either remove all optional code into another component
+or move everything to one text message compoennt (maybe it could be better to separate it)
+encapsulate this in one component
+change the names of textNodes file to only drawer -> maybe make another file for that?
 
 - a counter -> how many times an object was approached
 add state management for that (with recognition which object exactly was approached)
 - add non essential talking to objects (nested)
 - you can download cv drawer
 - add another event type for that
-
-- text message box has 2 buttons for nested textMessage! 
-create a text box with more configuration
-
-
-- 1.GO FORWARD WITH TUTORIAL
 
 
 
@@ -27,8 +28,6 @@ but changing the queue isn't working
 
 ****working queue****
 FIRST POLISH UP THE MAIN ROOM, THEN ADD ELEVATOR, THEN SECRET LAB
-- hero is able to interact with every item
-- add multiple talking queues
 - collect items by interacting with items
 - add another room
 - add a hidden room (hidden with password)

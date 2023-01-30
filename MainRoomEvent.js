@@ -47,11 +47,22 @@ class MainRoomEvent {
     textMessage(resolve) {
         const message = new TextMessage({
             text: this.event.text,
-            isChoicePossible: this.event.isChoicePossible,
             onComplete: () => resolve()
         })
         message.init(document.querySelector(".game-wrapper"))
     }
+
+    optionalTextMessage(resolve) {
+        const message = new OptionalTextMessage({
+            // pass an fitting array - first drawer only text
+            // textNodes: this.event.textNodes,
+            // probably options not needed
+            options: this.event.options,
+            onComplete: () => resolve()
+        })
+        message.init(document.querySelector(".game-wrapper"))
+    }
+
 
     changeMap(resolve) {
         const sceneTransition = new SceneTransition()
