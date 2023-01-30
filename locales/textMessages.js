@@ -1,4 +1,4 @@
-const locales = {
+const messages = {
     generic: {
         read: "Read",
         leave: "Leave",
@@ -60,11 +60,6 @@ const locales = {
     },
     drawer: {
         approach: "Just a regular drawer with everything in a world in there. Including my CV.",
-        text: {
-            download: "Would you like to download my CV as a PDF?",
-            confirm: "Good, otherwise you'd be looking just into my virtual sock drawer.",
-            decline: "Ok! You memory must be outstanding."
-        }
     },
     cookie: {
         approach: "Behind the vase you see a cookie.",

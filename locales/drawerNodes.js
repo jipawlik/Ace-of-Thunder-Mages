@@ -5,7 +5,7 @@ const drawerNodes = [
         options: [
             {
             text: 'Yes',
-            setState: { selected: true },
+            // setState: { selected: true },
             nextText: 2
             },
             {
@@ -17,12 +17,11 @@ const drawerNodes = [
     {
         id: 2,
         text: "Good, otherwise you'd be looking just into my virtual sock drawer.",
+        
     },
     {
         id: 3,
         text: "Ok! You memory must be outstanding.",
     },
-    
-   
   ]
   

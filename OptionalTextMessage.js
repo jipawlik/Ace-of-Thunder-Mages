@@ -1,6 +1,6 @@
 class OptionalTextMessage {
-    constructor({  onComplete }) {
-        // this.textNodes = textNodes || []
+    constructor({ locales, onComplete }) {
+        this.locales = locales
         this.onComplete = onComplete
         this.element = null
         this.state = {}
@@ -20,15 +20,6 @@ class OptionalTextMessage {
             <div class="TextMessage_button-wrapper"></div>
             <button class="TextMessage_button TextMessage_next-button" id="next-button">Next</button>
         `)
-     
-        this.revealingText = new RevealingText({
-            element: this.element.querySelector(".TextMessage_p"),
-            text: this.text
-        })
-        
-        this.actionListener = new KeyPressListener("Enter", () => {
-            this.done()
-        })
         
         this.escListener = new KeyPressListener("Escape", () => {
             this.escListener.unbind()
@@ -47,24 +38,43 @@ class OptionalTextMessage {
 
     showTextNode(textNodeIndex) {
         const buttonWrapper = this.element.querySelector(".TextMessage_button-wrapper")
-        const textNode = drawerNodes.find(textNode => textNode.id === textNodeIndex)
-        this.element.querySelector(".TextMessage_p").innerText = textNode.text
+        const textNode = this.locales.find(textNode => textNode.id === textNodeIndex)
+        const paragraph = this.element.querySelector(".TextMessage_p")
+
+        this.actionListener = new KeyPressListener("Enter", () => {
+            if(!textNode.options) {
+                this.done()
+            }
+        })
+
         while (buttonWrapper.firstChild) {
             buttonWrapper.removeChild(buttonWrapper.firstChild)
         }
-        textNode.options.forEach(option => {
-            if(this.showOption(option)) {
-                const button = document.createElement('button')
-                button.innerText = option.text
-                button.classList.add(".TextMessage_choice-button")
-                button.addEventListener('click', () => this.selectOption(option))
-                buttonWrapper.appendChild(button)
-            }
+        while (paragraph.firstChild) {
+            paragraph.removeChild(paragraph.firstChild)
+        }
+
+        this.revealingText = new RevealingText({
+            element: this.element.querySelector(".TextMessage_p"),
+            text: textNode.text
         })
+        this.revealingText.init()
+
+        if(textNode.options) {
+            textNode.options.forEach(option => {
+                if(this.showOption(option)) {
+                    const button = document.createElement('button')
+                    button.innerText = option.text
+                    button.classList.add("TextMessage_choice-button")
+                    button.addEventListener('click', () => this.selectOption(option))
+                    buttonWrapper.appendChild(button)
+                }
+            })
+        }
     }
 
     showOption(option) {
-        return option.requiredState == null || option.requiredState(state)
+        return option.requiredState == null || option.requiredState(this.state)
     }
 
     selectOption(option) {
@@ -72,11 +82,9 @@ class OptionalTextMessage {
         if (nextTextNodeId <= 0) {
             return this.startAction()
         }
-        this.state = Object.assign(state, option.setState)
+        this.state = Object.assign(this.state, option.setState)
         this.showTextNode(nextTextNodeId)
     }
-
-
 
     finish() {
         this.element.remove()
@@ -95,11 +103,7 @@ class OptionalTextMessage {
     init(container) {
         this.createElement()
         container.appendChild(this.element)
-        this.revealingText.init()
-        // najpierw na sztywno jaką tablicę użyć
-        // potem dodaj parametr do funkcji event, tak, żeby była reusable
         this.startAction()
-
     }
 }
 

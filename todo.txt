@@ -1,13 +1,9 @@
-NOW:
-Tech debt:
-textmessage handling is failing - need some state management
+NOW
+kosmetyka: wybierz odpowiedz myszką czy klawiaturą?
+zmień kolor (add classlist on keypress, button kolor)
+zatwierdź enterem (dodaj drugi warunek)
+if there are options => run funtion selectedoption
 
-create another event using new optional-text constructor.
-if that works you can play around refactoring:
-either remove all optional code into another component
-or move everything to one text message compoennt (maybe it could be better to separate it)
-encapsulate this in one component
-change the names of textNodes file to only drawer -> maybe make another file for that?
 
 - a counter -> how many times an object was approached
 add state management for that (with recognition which object exactly was approached)

@@ -54,10 +54,7 @@ class MainRoomEvent {
 
     optionalTextMessage(resolve) {
         const message = new OptionalTextMessage({
-            // pass an fitting array - first drawer only text
-            // textNodes: this.event.textNodes,
-            // probably options not needed
-            options: this.event.options,
+            locales: this.event.locales,
             onComplete: () => resolve()
         })
         message.init(document.querySelector(".game-wrapper"))

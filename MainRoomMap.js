@@ -102,9 +102,8 @@ window.maps = {
                 talking: [
                     {
                       events: [
-                          { type: "textMessage", text: `${locales.drawer.approach}`},
-                          { type: "textMessage", text: `${locales.drawer.text.download}`},
-                          { type: "optionalTextMessage"},
+                          { type: "textMessage", text: `${messages.drawer.approach}`},
+                          { type: "optionalTextMessage", locales: drawerNodes },
                       ]
                     },
                 ],
@@ -131,10 +130,10 @@ window.maps = {
                 talking: [
                     {
                       events: [
-                          { type: "textMessage", text: `${locales.bin.approach}`},
-                          { type: "textMessage", text: `${locales.bin.text.see}`},
-                          { type: "textMessage", text: `${locales.bin.text.mine}`},
-                          { type: "textMessage", text: `${locales.bin.text.thought}`},
+                          { type: "textMessage", text: `${messages.bin.approach}`},
+                          { type: "textMessage", text: `${messages.bin.text.see}`},
+                          { type: "textMessage", text: `${messages.bin.text.mine}`},
+                          { type: "textMessage", text: `${messages.bin.text.thought}`},
                       ]
                     }
                 ],
@@ -154,10 +153,10 @@ window.maps = {
                 talking: [
                     {
                       events: [
-                          { type: "textMessage", text: `${locales.info.approach}`},
-                          { type: "textMessage", text: `${locales.info.text.greet}`},
-                          { type: "textMessage", text: `${locales.info.text.personal}`},
-                          { type: "textMessage", text: `${locales.info.text.room}`},
+                          { type: "textMessage", text: `${messages.info.approach}`},
+                          { type: "textMessage", text: `${messages.info.text.greet}`},
+                          { type: "textMessage", text: `${messages.info.text.personal}`},
+                          { type: "textMessage", text: `${messages.info.text.room}`},
                       ]
                     }
                 ],
@@ -180,9 +179,9 @@ window.maps = {
                 talking: [
                     {
                       events: [
-                          { type: "textMessage", text: `${locales.education.approach}`},
-                          { type: "textMessage", text: `${locales.education.text.university}`},
-                          { type: "textMessage", text: `${locales.education.text.technical}`},
+                          { type: "textMessage", text: `${messages.education.approach}`},
+                          { type: "textMessage", text: `${messages.education.text.university}`},
+                          { type: "textMessage", text: `${messages.education.text.technical}`},
                       ]
                     }
                 ],
@@ -208,10 +207,10 @@ window.maps = {
                 talking: [
                     {
                       events: [
-                          { type: "textMessage", text: `${locales.exp.approach}`},
-                          { type: "textMessage", text: `${locales.exp.text.relevant}`},
-                          { type: "textMessage", text: `${locales.exp.text.pervious}`},
-                          { type: "textMessage", text: `${locales.exp.text.irrelevant}`},
+                          { type: "textMessage", text: `${messages.exp.approach}`},
+                          { type: "textMessage", text: `${messages.exp.text.relevant}`},
+                          { type: "textMessage", text: `${messages.exp.text.pervious}`},
+                          { type: "textMessage", text: `${messages.exp.text.irrelevant}`},
                       ]
                     }
                 ],
@@ -242,10 +241,10 @@ window.maps = {
                 talking: [
                     {
                       events: [
-                          { type: "textMessage", text: `${locales.skills.approach}`},
-                          { type: "textMessage", text: `${locales.skills.text.technical}`},
-                          { type: "textMessage", text: `${locales.skills.text.languages}`},
-                          { type: "textMessage", text: `${locales.skills.text.learning}`},
+                          { type: "textMessage", text: `${messages.skills.approach}`},
+                          { type: "textMessage", text: `${messages.skills.text.technical}`},
+                          { type: "textMessage", text: `${messages.skills.text.languages}`},
+                          { type: "textMessage", text: `${messages.skills.text.learning}`},
                       ]
                     }
                 ],
@@ -274,8 +273,8 @@ window.maps = {
                 talking: [
                     {
                       events: [
-                          { type: "textMessage", text: `${locales.sofa.approach}`},
-                          { type: "textMessage", text: `${locales.sofa.text.sit}`},
+                          { type: "textMessage", text: `${messages.sofa.approach}`},
+                          { type: "textMessage", text: `${messages.sofa.text.sit}`},
                       ]
                     }
                 ],
@@ -300,11 +299,11 @@ window.maps = {
                 talking: [
                     {
                       events: [
-                          { type: "textMessage", text: `${locales.cookie.approach}`},
-                          { type: "textMessage", text: `${locales.cookie.text.see}`},
-                          { type: "textMessage", text: `${locales.cookie.text.mine}`},
-                          { type: "textMessage", text: `${locales.cookie.text.question}`},
-                          { type: "textMessage", text: `${locales.cookie.text.share}`},
+                          { type: "textMessage", text: `${messages.cookie.approach}`},
+                          { type: "textMessage", text: `${messages.cookie.text.see}`},
+                          { type: "textMessage", text: `${messages.cookie.text.mine}`},
+                          { type: "textMessage", text: `${messages.cookie.text.question}`},
+                          { type: "textMessage", text: `${messages.cookie.text.share}`},
                       ]
                     }
                 ],
@@ -330,10 +329,10 @@ window.maps = {
                 talking: [
                     {
                       events: [
-                          { type: "textMessage", text: `${locales.hobbies.approach}`},
-                          { type: "textMessage", text: `${locales.hobbies.text.watch}`},
-                          { type: "textMessage", text: `${locales.hobbies.text.game}`},
-                          { type: "textMessage", text: `${locales.hobbies.text.dev}`},
+                          { type: "textMessage", text: `${messages.hobbies.approach}`},
+                          { type: "textMessage", text: `${messages.hobbies.text.watch}`},
+                          { type: "textMessage", text: `${messages.hobbies.text.game}`},
+                          { type: "textMessage", text: `${messages.hobbies.text.dev}`},
                       ]
                     }
                 ],
@@ -350,7 +349,7 @@ window.maps = {
             [utils.asGridCoord(6,18)]: [
                 {
                     events: [
-                        { type: "textMessage", text: `${locales.prompts.leave}`},
+                        { type: "textMessage", text: `${messages.prompts.leave}`},
                         // only if no leaving room
                         { who: "hero", type: "walk",  direction: "up" },
                         { who: "hero", type: "walk",  direction: "up" },
