@@ -41,12 +41,6 @@ class OptionalTextMessage {
         const textNode = this.locales.find(textNode => textNode.id === textNodeIndex)
         const paragraph = this.element.querySelector(".TextMessage_p")
 
-        this.actionListener = new KeyPressListener("Enter", () => {
-            if(!textNode.options) {
-                this.done()
-            }
-        })
-
         while (buttonWrapper.firstChild) {
             buttonWrapper.removeChild(buttonWrapper.firstChild)
         }
@@ -70,6 +64,16 @@ class OptionalTextMessage {
                     buttonWrapper.appendChild(button)
                 }
             })
+        } else {
+            this.actionListener = new KeyPressListener("Enter", () => {
+                if (textNode.id < this.locales.length) {
+                    // napraw zeby na enter sie tylko przyspieszyl reveal text
+                    this.showTextNode(textNode.id+1)
+                } else  {
+                    this.finish()
+                }
+            })
+            
         }
     }
 

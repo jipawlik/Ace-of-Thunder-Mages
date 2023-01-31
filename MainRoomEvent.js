@@ -46,7 +46,7 @@ class MainRoomEvent {
 
     textMessage(resolve) {
         const message = new TextMessage({
-            text: this.event.text,
+            locales: this.event.locales,
             onComplete: () => resolve()
         })
         message.init(document.querySelector(".game-wrapper"))

@@ -1,16 +1,16 @@
 NOW
+
+- debug komponentu i reveal text
+- usuń optionaltextmessage component, przerób main room map file
+
+
+- keyboard controllers on option buttons
+- add download option
+
 kosmetyka: wybierz odpowiedz myszką czy klawiaturą?
 zmień kolor (add classlist on keypress, button kolor)
 zatwierdź enterem (dodaj drugi warunek)
 if there are options => run funtion selectedoption
-
-
-- a counter -> how many times an object was approached
-add state management for that (with recognition which object exactly was approached)
-- add non essential talking to objects (nested)
-- you can download cv drawer
-- add another event type for that
-
 
 
 !! - refactoring of externalWalls in utils. 

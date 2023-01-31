@@ -225,8 +225,8 @@ window.maps = {
                 ]
             }),
             hero: new Person({
-                x: utils.withGrid(14),
-                y: utils.withGrid(4),
+                x: utils.withGrid(16),
+                y: utils.withGrid(6),
                 src: "/images/chars/bert.png",
                 useShadow: true
             }),
@@ -299,11 +299,7 @@ window.maps = {
                 talking: [
                     {
                       events: [
-                          { type: "textMessage", text: `${messages.cookie.approach}`},
-                          { type: "textMessage", text: `${messages.cookie.text.see}`},
-                          { type: "textMessage", text: `${messages.cookie.text.mine}`},
-                          { type: "textMessage", text: `${messages.cookie.text.question}`},
-                          { type: "textMessage", text: `${messages.cookie.text.share}`},
+                        { type: "optionalTextMessage", locales: tableNodes },
                       ]
                     }
                 ],
