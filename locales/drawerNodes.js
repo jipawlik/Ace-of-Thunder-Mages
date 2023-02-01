@@ -11,31 +11,35 @@ const drawerNodes = [
             {
             text: 'CV',
             // setState: { selected: true },
-            nextText: 2
-            },
-            {
-            text: 'Contact',
             nextText: 3
             },
             {
-            text: 'Nevermind',
+            text: 'Contact',
             nextText: 4
+            },
+            {
+            text: 'Nevermind',
+            nextText: 5
             }
         ]
     },
     {
         id: 3,
         text: "Good, otherwise you'd be looking just into my virtual sock drawer.",
-        
+        flag: "finish"
+
     },
     {
         id: 4,
         text: "There you go <no data>",
-        
+        flag: "finish"
+
     },
     {
         id: 5,
         text: "Ok! You memory must be outstanding.",
+        flag: "finish"
+
     },
   ]
   

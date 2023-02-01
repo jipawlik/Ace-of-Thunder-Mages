@@ -45,6 +45,14 @@
     margin-top: 15px;
 }
 
+.TextMessage_nav-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    font-size: 5px;
+    color: pink;
+}
+
 .TextMessage_choice-button {
     background: none;
     border: 0;
@@ -55,13 +63,9 @@
     padding: 10px;
     transition: 300ms;
 }
+
 .TextMessage_choice-button:hover {
     color: red;
-}
-
-.TextMessage_next-button {
-    right: 10px;
-    bottom: 10px;
 }
 
 .TextMessage_close-button {

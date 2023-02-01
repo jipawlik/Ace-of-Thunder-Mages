@@ -52,15 +52,6 @@ class MainRoomEvent {
         message.init(document.querySelector(".game-wrapper"))
     }
 
-    optionalTextMessage(resolve) {
-        const message = new OptionalTextMessage({
-            locales: this.event.locales,
-            onComplete: () => resolve()
-        })
-        message.init(document.querySelector(".game-wrapper"))
-    }
-
-
     changeMap(resolve) {
         const sceneTransition = new SceneTransition()
         sceneTransition.init(document.querySelector(".game-wrapper"), () => {

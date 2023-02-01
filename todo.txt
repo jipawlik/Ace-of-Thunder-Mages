@@ -1,16 +1,10 @@
 NOW
-
-- debug komponentu i reveal text
-- usuń optionaltextmessage component, przerób main room map file
-
-
 - keyboard controllers on option buttons
 - add download option
+- add copy to clipboard on contact
 
 kosmetyka: wybierz odpowiedz myszką czy klawiaturą?
 zmień kolor (add classlist on keypress, button kolor)
-zatwierdź enterem (dodaj drugi warunek)
-if there are options => run funtion selectedoption
 
 
 !! - refactoring of externalWalls in utils. 

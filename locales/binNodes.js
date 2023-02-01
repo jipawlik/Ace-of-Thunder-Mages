@@ -11,15 +11,10 @@ const binNodes = [
     },
     {
         id: 3,
-        text: "I was going to eat that.",
-
-    },
-    {
-        id: 4,
         text:  "The ideas are dead which technically makes it a graveyard.",
     },
     {
-        id: 5,
+        id: 4,
         text:"This creepy thought made you uncomfortable.",
 
     },
