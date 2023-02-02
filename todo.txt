@@ -1,10 +1,5 @@
 NOW
 - keyboard controllers on option buttons
-- add download option
-- add copy to clipboard on contact
-
-kosmetyka: wybierz odpowiedz myszką czy klawiaturą?
-zmień kolor (add classlist on keypress, button kolor)
 
 
 !! - refactoring of externalWalls in utils. 
@@ -12,6 +7,7 @@ function is adding walls from gameObjects, but they are not working
 walls from externalWalls are working though
 this means that probably objects are mounted later? 
 but changing the queue isn't working
+!! - refactoring of if-else horror in the textmessage compoenent
 
 
 
@@ -33,7 +29,7 @@ he's a hacker that was waiting to know everything to destroy the system
 as a revenge
 
 - if not interacted with everything the monster fights
-
+concentrate on web version, no mobile, no mouse-only (it,s not possible to play with mouse anyway)
 Game info
 Navigation with keyboard
 Display size - can be increased by ctr+

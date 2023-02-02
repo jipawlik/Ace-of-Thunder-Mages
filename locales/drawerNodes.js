@@ -10,11 +10,12 @@ const drawerNodes = [
         options: [
             {
             text: 'CV',
-            // setState: { selected: true },
+            flag: "download",
             nextText: 3
             },
             {
             text: 'Contact',
+            flag: "copyToClipboard",
             nextText: 4
             },
             {
@@ -31,7 +32,7 @@ const drawerNodes = [
     },
     {
         id: 4,
-        text: "There you go <no data>",
+        text: "My email address has been copied to your clipboard.",
         flag: "finish"
 
     },

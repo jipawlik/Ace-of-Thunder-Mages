@@ -20,7 +20,6 @@ class TextMessage {
             <div class="TextMessage_button-wrapper"></div>
             <div class="TextMessage_nav-wrapper">
                 <p>Next: Press Enter </p>
-                <p>Reveal: Press Space</p>
             </div>
         `)
         
@@ -53,28 +52,44 @@ class TextMessage {
         })
         this.revealingText.init()
 
-        if(paragraph) {
-            this.actionListener = new KeyPressListener("Space", () => {
-                this.revealingText.warpToDone()
-            })
-        }
-
         if(textNode.options) {
+            if(paragraph) {
+                this.actionListener = new KeyPressListener("Enter", () => {
+                    this.actionListener.unbind()
+                    this.revealingText.warpToDone()
+                })
+            }
             textNode.options.forEach(option => {
                 if(this.showOption(option)) {
                     const button = document.createElement('button')
                     button.innerText = option.text
                     button.classList.add("TextMessage_choice-button")
-                    button.addEventListener('click', () => this.selectOption(option))
+                    button.addEventListener('click', () => 
+                        {
+                            if(option.flag === "download") {
+                                window.open('locales/resume.pdf')
+                            }
+                            if(option.flag === "copyToClipboard") {
+                                navigator.clipboard.writeText("joannaizabelapawlik@gmail.com")
+                            }
+                            this.selectOption(option)
+
+                        }
+                    )
                     buttonWrapper.appendChild(button)
                 }
             })
         } else {
             this.actionListener = new KeyPressListener("Enter", () => {
-                if (textNode.id < this.locales.length && textNode.flag !== "finish") {
-                    this.showTextNode(textNode.id+1)
-                } else  {
-                    this.finish()
+                if(this.revealingText.isDone) {
+                    this.actionListener.unbind()
+                    if (textNode.id < this.locales.length && textNode.flag !== "finish") {
+                        this.showTextNode(textNode.id+1)
+                    } else  {
+                        this.finish()
+                    }
+                } else {
+                    this.revealingText.warpToDone()
                 }
             })
             
