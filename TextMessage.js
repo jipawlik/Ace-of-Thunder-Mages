@@ -42,12 +42,7 @@ class TextMessage {
         this.revealingText.init()
 
         if(textNode.options) {
-            if(paragraph) {
-                this.actionListener = new KeyPressListener("Enter", () => {
-                    this.actionListener.unbind()
-                    this.revealingText.warpToDone()
-                })
-            }
+            this.revealingText.warpToDone()
             textNode.options.forEach(option => {
                 if(this.showOption(option)) {
                     const button = document.createElement('button')
@@ -56,18 +51,35 @@ class TextMessage {
                     button.addEventListener('click', () => 
                         {
                             if(option.flag === "download") {
-                                window.open('locales/resume.pdf')
+                                window.open('https://drive.google.com/file/d/1DOJHA8MdoUNblxUxPSnAu7Qirgv5_Q0U/view?usp=sharing')
                             }
                             if(option.flag === "copyToClipboard") {
                                 navigator.clipboard.writeText("joannaizabelapawlik@gmail.com")
                             }
                             this.selectOption(option)
-
                         }
                     )
                     buttonWrapper.appendChild(button)
                 }
             })
+            const buttons = document.querySelectorAll("button")
+            let selected = 0
+            buttons[selected].classList.add("selected")
+            this.actionListener = new KeyPressListener("ArrowLeft", () => {
+                buttons[selected].classList.remove("selected")
+                selected = selected > 0 ? --selected : 0
+                buttons[selected].classList.add("selected")
+            })
+            this.actionListener = new KeyPressListener("ArrowRight", () => {
+                buttons[selected].classList.remove("selected")
+                selected = selected < buttons.length - 1 ? ++selected : buttons.length -1
+                buttons[selected].classList.add("selected")
+            })
+            this.actionListener = new KeyPressListener("Enter", () => {
+                this.actionListener.unbind()
+                buttons[selected].click()
+            })
+
         } else {
             this.actionListener = new KeyPressListener("Enter", () => {
                 if(this.revealingText.isDone) {

@@ -61,9 +61,13 @@
     cursor: pointer;
     font-size: 8px;
     padding: 10px;
-    transition: 300ms;
+    transition: 100ms;
 }
 
 .TextMessage_choice-button:hover {
+    color: red;
+}
+
+.selected {
     color: red;
 }

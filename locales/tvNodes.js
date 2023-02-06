@@ -6,7 +6,7 @@ const tvNodes = [
     },
     {
         id: 2,
-        text: "I'm a massive art nerd - I love music, painting and crafts",
+        text: "I'm a massive art nerd - I love music, painting and crafts.",
        
     },
     {

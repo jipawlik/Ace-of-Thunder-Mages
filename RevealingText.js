@@ -17,6 +17,7 @@ class RevealingText {
                 this.revealOneCharacter(list)
             }, next.delayAfter)
         } else {
+            sound.pause()
             this.isDone = true
         }
     }

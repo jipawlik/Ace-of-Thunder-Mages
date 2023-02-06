@@ -1,17 +1,12 @@
 NOW
----> keyboard controllers on option buttons
-- new content <--- detailed list
 
+- weather app in the room ->
+- research
+for the simplicity create 6 different window sprites to toggle with weather
 
-!! - refactoring of externalWalls in utils. 
-function is adding walls from gameObjects, but they are not working
-walls from externalWalls are working though
-this means that probably objects are mounted later? 
-but changing the queue isn't working
-!! - refactoring of if-else horror in the textmessage compoenent
-
-
-
+- create elevator sprite ()
+- add cutscene
+- create corridor map
 
 ****working queue****
 FIRST POLISH UP THE MAIN ROOM, THEN ADD ELEVATOR, THEN SECRET LAB
@@ -42,3 +37,12 @@ starting screen
 1. ELEVATOR
 2. corridor
 3. room
+
+TECH DEBT
+
+!! - refactoring of externalWalls in utils. 
+function is adding walls from gameObjects, but they are not working
+walls from externalWalls are working though
+this means that probably objects are mounted later? 
+but changing the queue isn't working
+!! - refactoring of if-else horror in the textmessage compoenent
