@@ -1,5 +1,6 @@
 NOW
-- keyboard controllers on option buttons
+---> keyboard controllers on option buttons
+- new content <--- detailed list
 
 
 !! - refactoring of externalWalls in utils. 
@@ -34,3 +35,10 @@ Game info
 Navigation with keyboard
 Display size - can be increased by ctr+
 creator
+sounds mixkitke
+
+Final cutscene order
+starting screen
+1. ELEVATOR
+2. corridor
+3. room

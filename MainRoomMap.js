@@ -263,9 +263,10 @@ window.maps = {
                     }
                 ],
                 walls: [
-                    [utils.asGridCoord(13,9)],
-                    [utils.asGridCoord(12,9)],
                     [utils.asGridCoord(11,9)],
+                    [utils.asGridCoord(12,9)],
+                    [utils.asGridCoord(13,9)],
+                    [utils.asGridCoord(14,9)],
                     [utils.asGridCoord(11,10)],
                     [utils.asGridCoord(11,11)],
                     [utils.asGridCoord(11,12)],
@@ -288,13 +289,10 @@ window.maps = {
                     }
                 ],
                 walls: [
-                    [utils.asGridCoord(13,9)],
-                    [utils.asGridCoord(12,9)],
-                    [utils.asGridCoord(11,9)],
-                    [utils.asGridCoord(17,9)],
-                    [utils.asGridCoord(16,9)],
                     [utils.asGridCoord(15,9)],
-                    [utils.asGridCoord(14,9)]
+                    [utils.asGridCoord(16,9)],
+                    [utils.asGridCoord(17,9)],
+                    [utils.asGridCoord(18,9)],
                 ]
 
             }),
@@ -317,7 +315,6 @@ window.maps = {
                     [utils.asGridCoord(21,9)],
                     [utils.asGridCoord(20,9)],
                     [utils.asGridCoord(19,9)],
-                    [utils.asGridCoord(18,9)],
                 ]
             }),
         },

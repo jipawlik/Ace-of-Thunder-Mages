@@ -67,9 +67,3 @@
 .TextMessage_choice-button:hover {
     color: red;
 }
-
-.TextMessage_close-button {
-    left: 3px;
-    top: 2px;
-    font-size: 8px;
-}
