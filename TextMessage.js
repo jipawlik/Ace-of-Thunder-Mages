@@ -47,25 +47,26 @@ class TextMessage {
                 if(this.showOption(option)) {
                     const disapproveSound = new Audio("/sounds/disapprove.wav")
                     const approveSound = new Audio("/sounds/approve.wav")
-                    
+
                     const button = document.createElement('button')
                     button.innerText = option.text
                     button.classList.add("TextMessage_choice-button")
                     button.addEventListener('click', () => 
                         {
-                            if(option.flag === "download") {
-                                approveSound.play()
-                                window.open('https://drive.google.com/file/d/1DOJHA8MdoUNblxUxPSnAu7Qirgv5_Q0U/view?usp=sharing')
-                            }
-                            if(option.flag === "copyToClipboard") {
-                                approveSound.play()
-                                navigator.clipboard.writeText("joannaizabelapawlik@gmail.com")
-                            }
-                            if(option.flag === "Nevermind") {
-                                disapproveSound.play()
+                            switch (option.flag) {
+                                case "download":
+                                    approveSound.play()
+                                    window.open('https://drive.google.com/file/d/1DOJHA8MdoUNblxUxPSnAu7Qirgv5_Q0U/view?usp=sharing')
+                                    break;
+                                case "copyToClipboard": 
+                                    approveSound.play()
+                                    navigator.clipboard.writeText("joannaizabelapawlik@gmail.com")
+                                    break;
+                                case "Nevermind":
+                                    disapproveSound.play()
+                                    break;
                             }
                             this.selectOption(option)
-
                         }
                     )
                     buttonWrapper.appendChild(button)

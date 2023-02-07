@@ -43,6 +43,9 @@ starting screen
 
 TECH DEBT
 
+There is a tech debt in the game, because of no engine or library is used.
+Some of code might be improved, but I'd go too far with it unless it really breaks.
+
 !! - refactoring of externalWalls in utils. 
 function is adding walls from gameObjects, but they are not working
 walls from externalWalls are working though
