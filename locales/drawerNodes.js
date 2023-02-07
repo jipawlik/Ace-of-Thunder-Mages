@@ -20,6 +20,7 @@ const drawerNodes = [
             },
             {
             text: 'Nevermind',
+            flag: "Nevermind",
             nextText: 5
             }
         ]

@@ -1,8 +1,11 @@
 NOW
-
+- concept of enter screen and logo
 - weather app in the room ->
 - research
 for the simplicity create 6 different window sprites to toggle with weather
+- fix the sound on removing the element. it need a pause function directly no revealing componennt
+somehow the sound plays itself twice, only on options element (heck line 89)
+
 
 - create elevator sprite ()
 - add cutscene
