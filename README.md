@@ -3,6 +3,15 @@
 Ace of Thunder Mages is a small RPG game written entirely in JavaScript and my own portfolio project that I contribute to in my free time. 
 I understand that there are some questions. Let's face it, we both apparently have nothing better to do at the moment than exchanging some absolutely crucial information.
 
+# How to run it? 👾
+
+For now, you can run the project locally using NodeJS or Python local web server. 
+For NodeJS there is an npm package needed (please visit https://jasonwatmore.com/post/2016/06/22/nodejs-setup-simple-http-server-local-web-server for having a detailed instructions). 
+For Python, you can find instructions here https://ryanblunden.com/create-a-http-server-with-one-command-thanks-to-python-29fcfdcd240e
+
+Once I'm finished with the project I plan to host it on a website.
+
+
 ## What, why, seriously, why? 👾
 Thunder Mages are...fantastic creatures that have mixed into the society and pretending to be regular people, but they are truly gifted in many skills that they successfully develop by simple tools like mouses, keyboards, monitors, computers...of course you know already who they are - the members of the most majestic Github Guild of Magic. Some call them software developers, but it's kind of a lame nerdy name (oh, wait...).
 
