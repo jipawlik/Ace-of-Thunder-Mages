@@ -11,13 +11,17 @@ For Python, you can find instructions here https://ryanblunden.com/create-a-http
 
 Once I'm finished with the project I plan to host it on a website.
 
+# How to navigate in the game?
 
-## What, why, seriously, why? 👾
+Use keyboard arrows to move the character and Enter key to interact with the objects. 
+I don't plan to add 'point-and-click'/mouse-related functionalities. This also means, that for now it's also not possible to run it on a mobile device. 
+
+## Game's story 👾
 Thunder Mages are...fantastic creatures that have mixed into the society and pretending to be regular people, but they are truly gifted in many skills that they successfully develop by simple tools like mouses, keyboards, monitors, computers...of course you know already who they are - the members of the most majestic Github Guild of Magic. Some call them software developers, but it's kind of a lame nerdy name (oh, wait...).
 
 Ok, from now I'll hold my horses and stick to the reality.
 
-## More seriously, why? 👾
+## Why make it a game? 👾
 
 For now it will be my portfolio project to present my resume and skills in a more interesting and creative way.
 Video game is the most powerful self expression medium that combines multiple art types in one - visual arts, 
