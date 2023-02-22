@@ -30,6 +30,7 @@ If the project grows, I plan to switch to another game making tool, but for now,
 ## Anything more to the project? 👾
 
 The art and sprites in the game are created entirely by myself.
+Sound effects are downloaded from https://mixkit.co/
 
 
 
