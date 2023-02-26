@@ -57,7 +57,6 @@ class MainRoomMap {
             return `${result[0]}`=== `${nextCoords.x},${nextCoords.y}`
 
         })
-        // console.log({ match })
         if(!this.isCutscenePlaying && match && match.talking.length) {
             this.startCutscene(match.talking[0].events)
         }
@@ -340,7 +339,7 @@ window.maps = {
         }
     },
     Elevator: {
-        lowerSrc: "/images/maps/mockup.png",
+        lowerSrc: "/images/maps/elevator.png",
         gameObject: {
             hero: new Person({
                 x: utils.withGrid(6),
@@ -349,6 +348,29 @@ window.maps = {
                 useShadow: true
             }),
             // object with instructions
+        }
+    },
+    TitleScreen: {
+        lowerSrc: "/images/logo.png",
+        gameObject: {
+            hero: new Person({
+                x: utils.withGrid(6),
+                y: utils.withGrid(14),
+                src: "/images/chars/bert.png",
+                useShadow: true
+            }),
+            // door: new GameObject({})
+        },
+        
+        cutsceneSpaces: {
+            [utils.asGridCoord(6,18)]: [
+                {
+                    events: [
+                        // door open
+                        // { type: "changeMap", map: "MainRoom" },
+                    ]
+                }
+            ],
         }
     }
 

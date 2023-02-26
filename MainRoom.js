@@ -46,14 +46,12 @@ class MainRoom {
     }
 
     init() {
-        this.startMap(window.maps.MainRoom)
+        this.startMap(window.maps.TitleScreen)
         this.bindActionInput()
         this.bindHeroPositionCheck()
         this.directionInput = new DirectionInput()
         this.directionInput.init()
         this.startGameLoop()
-        // console.log("hello", utils.messageHelper)
-
     }
 }
 
