@@ -46,7 +46,7 @@ class MainRoom {
     }
 
     init() {
-        this.startMap(window.maps.TitleScreen)
+        this.startMap(window.maps.MainRoom)
         this.bindActionInput()
         this.bindHeroPositionCheck()
         this.directionInput = new DirectionInput()
