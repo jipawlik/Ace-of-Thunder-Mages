@@ -57,6 +57,7 @@ class MainRoomMap {
             return `${result[0]}`=== `${nextCoords.x},${nextCoords.y}`
 
         })
+        console.log({match})
         if(!this.isCutscenePlaying && match && match.talking.length) {
             this.startCutscene(match.talking[0].events)
         }
@@ -317,7 +318,15 @@ window.maps = {
                 ]
             }),
         },
-        walls: {},
+        walls: function() {
+            let walls = {};
+            ["5,18","7,18","4,18","4,17","4,16","4,15","4,14","13,14","14,14"
+            ].forEach(coord => {
+              let [x,y] = coord.split(",");
+              walls[utils.asGridCoord(x,y)] = true;
+            })
+            return walls;
+          }(),
         cutsceneSpaces: {
             [utils.asGridCoord(6,18)]: [
                 {
@@ -353,14 +362,39 @@ window.maps = {
     TitleScreen: {
         lowerSrc: "/images/logo.png",
         gameObject: {
+            door: new GameObject({
+                x: utils.withGrid(10.25),
+                y: utils.withGrid(10.5),
+                src: "/images/icons/door-mockup.png",
+                spriteConfig: {
+                    width: 50,
+                    height: 85
+                },
+                walls: [
+                    [utils.asGridCoord(7,10)],
+                    [utils.asGridCoord(8,10)],
+                    [utils.asGridCoord(9,10)],
+                    [utils.asGridCoord(10,10)],
+                    [utils.asGridCoord(11,10)],
+                    [utils.asGridCoord(12,10)],
+                ]
+            }),
             hero: new Person({
                 x: utils.withGrid(6),
                 y: utils.withGrid(14),
                 src: "/images/chars/bert.png",
                 useShadow: true
-            }),
-            // door: new GameObject({})
+            })
         },
+        walls: function() {
+            let walls = {};
+            ["6,14","7,14","8,14","9,14","10,14","11,14","12,14","13,14","14,14"
+            ].forEach(coord => {
+              let [x,y] = coord.split(",");
+              walls[utils.asGridCoord(x,y)] = true;
+            })
+            return walls;
+          }(),
         
         cutsceneSpaces: {
             [utils.asGridCoord(6,18)]: [

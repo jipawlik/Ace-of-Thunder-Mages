@@ -41,6 +41,8 @@ class MainRoom {
     startMap(mapConfig) {
         this.map = new MainRoomMap(mapConfig)
         this.map.overworld = this
+        // wall assignment fails like this. there has to be
+        // related map-wall recognition in order to load more maps
         utils.assignWalls(this.map.walls)
         this.map.mountObjects()
     }
