@@ -88,13 +88,13 @@ class MainRoomMap {
 
 window.maps = {
     MainRoom: {
-        lowerSrc: "/images/maps/room.png",
+        lowerSrc: "images/maps/room.png",
         upperSrc: "",
         gameObject: {
             drawer: new GameObject({
                 x: utils.withGrid(15.75),
                 y: utils.withGrid(4.5),
-                src: "/images/icons/drawer.png",
+                src: "images/icons/drawer.png",
                 spriteConfig: {
                     width: 80,
                     height: 59
@@ -121,7 +121,7 @@ window.maps = {
             bin: new GameObject({
                 x: utils.withGrid(20.75),
                 y: utils.withGrid(5.5),
-                src: "/images/icons/bin.png",
+                src: "images/icons/bin.png",
                 spriteConfig: {
                     width: 30,
                     height: 50
@@ -141,7 +141,7 @@ window.maps = {
             portrait: new GameObject({
                 x: utils.withGrid(12.5),
                 y: utils.withGrid(0.75),
-                src: "/images/icons/portrait.png",
+                src: "images/icons/portrait.png",
                 spriteConfig: {
                     width: 49,
                     height: 60
@@ -164,7 +164,7 @@ window.maps = {
             bookshelf: new GameObject({
                 x: utils.withGrid(0.75),
                 y: utils.withGrid(0.5),
-                src: "/images/icons/bookshelf.png",
+                src: "images/icons/bookshelf.png",
                 spriteConfig: {
                     width: 120,
                     height: 142
@@ -190,7 +190,7 @@ window.maps = {
             cp: new GameObject({
                 x: utils.withGrid(8),
                 y: utils.withGrid(4),
-                src: "/images/icons/cp.png",
+                src: "images/icons/cp.png",
                 spriteConfig: {
                     width: 80,
                     height: 76
@@ -215,13 +215,13 @@ window.maps = {
             hero: new Person({
                 x: utils.withGrid(10),
                 y: utils.withGrid(10),
-                src: "/images/chars/bert.png",
+                src: "images/chars/bert.png",
                 useShadow: true
             }),
             piano: new GameObject({
                 x: utils.withGrid(0.25),
                 y: utils.withGrid(10.5),
-                src: "/images/icons/piano.png",
+                src: "images/icons/piano.png",
                 spriteConfig: {
                     width: 74,
                     height: 100
@@ -250,7 +250,7 @@ window.maps = {
             sofa: new GameObject({
                 x: utils.withGrid(11.5),
                 y: utils.withGrid(10.25),
-                src: "/images/icons/sofa.png",
+                src: "images/icons/sofa.png",
                 spriteConfig: {
                     width: 70,
                     height: 99
@@ -276,7 +276,7 @@ window.maps = {
             table: new GameObject({
                 x: utils.withGrid(16),
                 y: utils.withGrid(10.25),
-                src: "/images/icons/table.png",
+                src: "images/icons/table.png",
                 spriteConfig: {
                     width: 54,
                     height: 99
@@ -299,7 +299,7 @@ window.maps = {
             tv: new GameObject({
                 x: utils.withGrid(19.25),
                 y: utils.withGrid(10.5),
-                src: "/images/icons/tv.png",
+                src: "images/icons/tv.png",
                 spriteConfig: {
                     width: 50,
                     height: 90
@@ -348,7 +348,7 @@ window.maps = {
         }
     },
     Elevator: {
-        lowerSrc: "/images/maps/elevator.png",
+        lowerSrc: "images/maps/elevator.png",
         gameObject: {
             hero: new Person({
                 x: utils.withGrid(6),
@@ -360,12 +360,12 @@ window.maps = {
         }
     },
     TitleScreen: {
-        lowerSrc: "/images/logo.png",
+        lowerSrc: "images/logo.png",
         gameObject: {
             door: new GameObject({
                 x: utils.withGrid(10.25),
                 y: utils.withGrid(10.5),
-                src: "/images/icons/door-mockup.png",
+                src: "images/icons/door-mockup.png",
                 spriteConfig: {
                     width: 50,
                     height: 85
@@ -382,7 +382,7 @@ window.maps = {
             hero: new Person({
                 x: utils.withGrid(6),
                 y: utils.withGrid(14),
-                src: "/images/chars/bert.png",
+                src: "images/chars/bert.png",
                 useShadow: true
             })
         },
