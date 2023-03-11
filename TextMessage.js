@@ -45,8 +45,8 @@ class TextMessage {
             this.revealingText.warpToDone()
             textNode.options.forEach(option => {
                 if(this.showOption(option)) {
-                    const disapproveSound = new Audio("/sounds/disapprove.wav")
-                    const approveSound = new Audio("/sounds/approve.wav")
+                    const disapproveSound = new Audio("sounds/disapprove.wav")
+                    const approveSound = new Audio("sounds/approve.wav")
 
                     const button = document.createElement('button')
                     button.innerText = option.text

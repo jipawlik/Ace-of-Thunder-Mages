@@ -8,7 +8,7 @@ class RevealingText {
     }
 
     revealOneCharacter(list) {
-        const sound = new Audio("/sounds/keytype.wav")
+        const sound = new Audio("sounds/keytype.wav")
         const next = list.splice(0,1)[0]
         next.span.classList.add("revealed")
         if (list.length > 0) {
