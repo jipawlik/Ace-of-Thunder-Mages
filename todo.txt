@@ -1,15 +1,10 @@
 NOW
-- concept of enter screen and logo
-- weather app in the room ->
-- research
-for the simplicity create 6 different window sprites to toggle with weather
-- fix the sound on removing the element. it need a pause function directly no revealing componennt
-somehow the sound plays itself twice, only on options element (heck line 89)
+- remove assignWall function from utils. walls need to run from the map directly.
+find out why it's not working
+- leave the title screen for now until you figure out what fails
+- walls are there, but the hero won't stop while approaching them
+- test if the match function works. 
 
-
-- create elevator sprite ()
-- add cutscene
-- create corridor map
 
 ****working queue****
 FIRST POLISH UP THE MAIN ROOM, THEN ADD ELEVATOR, THEN SECRET LAB

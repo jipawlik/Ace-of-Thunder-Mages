@@ -213,8 +213,8 @@ window.maps = {
                 ]
             }),
             hero: new Person({
-                x: utils.withGrid(14),
-                y: utils.withGrid(5),
+                x: utils.withGrid(10),
+                y: utils.withGrid(10),
                 src: "/images/chars/bert.png",
                 useShadow: true
             }),

@@ -17,6 +17,7 @@ class MainRoom {
                 })
                 object.sprite.draw(this.ctx)
             })
+            // cameraperson is missing? check drawlowerimg function
             requestAnimationFrame(() => {
                 step()
             })
