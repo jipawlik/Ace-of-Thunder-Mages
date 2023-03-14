@@ -33,3 +33,10 @@ body {
 .game-wrapper canvas {
     image-rendering: pixelated;
 }
+
+.controls {
+    color: var(--menu-font-color);
+    font-family: 'Press Start 2P';
+    font-size: 6px;
+    margin: 0;
+}
